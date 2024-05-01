@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour {
     public GameObject scoreDisplay;
     public GameObject HealthDisplay;
     public GameObject curtain;
+    public GameObject window;
     private bool flickering = true;
 
     void Start() {
