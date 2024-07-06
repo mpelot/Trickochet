@@ -8,7 +8,9 @@ public class ScoreManager : MonoBehaviour {
     public TextMeshProUGUI highscore;
     public Ball ball;
     public Player player;
+    public Bully bully;
     public GameObject startingPosition;
+    public GameObject startingPositionBully;
     private int s = 0;
     private int hs = 0;
 
@@ -22,11 +24,14 @@ public class ScoreManager : MonoBehaviour {
 
     public void Begin() {
         player.canMove = true;
+        bully.canMove = true;
+
     }
 
     public void End() {
         ball.transform.position = startingPosition.transform.position;
         ball.Reset();
+        bully.transform.position = startingPositionBully.transform.position;
         if (s > hs) {
             string stringScore = s + "";
             while (stringScore.Length < 6)

@@ -12,7 +12,11 @@ public class Ball : MonoBehaviour
     public float duration = .1f;
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.name.Equals("Left") || collision.gameObject.name.Equals("Right"))
+        if (collision.gameObject.name.Equals("Bully"))
+        {
+            direction = Vector2.Reflect(direction, transform.position - collision.transform.position).normalized;
+        }
+        else if (collision.gameObject.name.Equals("Left") || collision.gameObject.name.Equals("Right"))
             direction += Vector2.left * direction.x * 2;
         else
             direction += Vector2.down * direction.y * 2;
